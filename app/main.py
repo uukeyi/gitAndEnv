@@ -17,7 +17,6 @@ def isValid(string):
 
 
 
-print(isValid('(]'))
 
 
 
