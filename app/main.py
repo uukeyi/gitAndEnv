@@ -1,24 +1,19 @@
-def isValid(string):
-     stack = []
-     valid_combinations = ['()', '[]', '{}']
-     for char in string:
-        if(char == "(" or char == '[' or char == '{'):
+def is_valid_brackets(sequence):
+    pairs = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    }
+    pairs_values = pairs.values()
+
+    stack = []
+
+    for char in sequence:
+        if char in pairs_values:
             stack.append(char)
-        else:
-            if(len(stack) != 0 and stack[len(stack) - 1] + char in valid_combinations):
-                stack.append(char)
-                del stack[-2:]
-            else:
+        elif char in pairs:
+            if not stack or stack[-1] != pairs[char]:
                 return False
-     return len(stack) == 0
+            stack.pop()
 
-
-
-
-
-
-
-
-
-
-    #   (]){}
+    return len(stack) == 0

@@ -7,36 +7,55 @@
 - Open brackets must be closed by the same type of brackets.
 - Open brackets must be closed in the correct order.
 - Every close bracket has a corresponding open bracket of the same type
--
 
 ### Example 1
 
-Input: s = "()[]{}"
-
-Output: true
+```python
+# is_valid_brackets("()[]{}")
+True
+```
 
 
 ### Example 2
 
-Input: s = "(]"
-
-Output: false
+```python
+# is_valid_brackets("(]")
+False
+```
 
 
 ### Example 3
-
-Input: s = "()"
-
-Output: true
+```python
+# is_valid_brackets("()")
+True
+```
 
 ### Example 4
 
-Input: s = "([])"
-
-Output: true
-
+```python
+# is_valid_brackets("[]")
+True
+```
 
 ## Constraints:
 
-- 1 <= s.length <= 104
+- 1 <= s.length <= 10<sup>4</sup>
 - s consists of parentheses only '()[]{}'.
+
+# How to test
+
+### Install dependecies
+
+```
+pip install -r requirements_test.txt
+```
+
+### Init tests
+```
+pytest
+```
+or
+```
+pytest -v
+```
+for detail log
